@@ -1,0 +1,5 @@
+<view s-if="ifOpen">
+    <view class='class-0 {{data1 < 10 ? "data1" : data2 > 10 ? "data2" : ""}}' s-for="list">
+        {{data2}}
+    </view>
+</view>

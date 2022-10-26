@@ -1,0 +1,33 @@
+[package]
+name = "component-parser"
+version = "0.1.0"
+description = "parse swan component"
+authors = ["kekee000@gmail.com"]
+license = "MIT"
+edition = "2018"
+
+[profile.release]
+lto = true
+strip = "debuginfo"
+panic = "abort"
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+regex = "1.6.0"
+serde = "1.0.138"
+serde_derive = "1.0.138"
+serde_json = "1.0.82"
+swc_ecma_parser = "0.99.1"
+swc_common = { version = "0.17.0", features=["tty-emitter"]}
+swc_ecma_ast = "0.74.0"
+swc_atoms = "0.2.13"
+swc_ecma_visit = {version = "0.60.0", optional = true}
+
+[dependencies.neon]
+version = "0.10"
+default-features = false
+features = ["napi-6"]

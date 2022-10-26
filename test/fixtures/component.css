@@ -1,0 +1,37 @@
+.class-0 {
+     color: blue;
+}
+
+body {
+    color: red;
+    margin: .12em 0.38px;
+}
+
+
+/* 类重复定义 */
+.class-0 {
+    color: red;
+}
+
+.class-1 {
+     color: blue;
+}
+
+
+/* 类定义 */ p .class-2 .class-3::after, .class-4:hover {
+    color: blue;
+}
+
+@media screen {
+    .class-5.class-6,.class-7 {
+        color: blue;
+    }
+
+    * .class-8>.class-9 {
+        color: blue;
+    }
+}
+
+@import './import.css';
+@import './import.css';
+@import './import.css';

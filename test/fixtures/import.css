@@ -1,0 +1,9 @@
+@import url("../fixtures/./component.css");
+
+body .import {
+    color: red;
+}
+
+@import './page.css' screen;
+
+@import './notf-ound.css' screen;

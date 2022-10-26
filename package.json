@@ -1,0 +1,33 @@
+{
+  "name": "@swanide/component-parser",
+  "version": "0.1.4",
+  "description": "parse swan component",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "parser-*.node",
+    "parser-mock.js"
+  ],
+  "scripts": {
+    "prepublish": "npm run build-release && npm run build-windows && npm run build-m1",
+    "build": "cargo-cp-artifact -nc parser-x64-darwin.node -- cargo build --target=x86_64-apple-darwin --message-format=json-render-diagnostics",
+    "build-windows": "cargo-cp-artifact -nc parser-x64-win32.node -- cargo build --target=x86_64-pc-windows-gnu --release --message-format=json-render-diagnostics",
+    "build-m1": "cargo-cp-artifact -nc parser-aarch64-darwin.node -- cargo build --target=aarch64-apple-darwin --release --message-format=json-render-diagnostics",
+    "build-debug": "npm run build --",
+    "build-release": "npm run build -- --release",
+    "test": "cargo test",
+    "prebenchmark": "npm run build-release",
+    "benchmark": "node test/benchmark.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kekee000/component-parser.git"
+  },
+  "author": "kekee000@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "acorn": "^7.4.1",
+    "cargo-cp-artifact": "^0.1"
+  }
+}
